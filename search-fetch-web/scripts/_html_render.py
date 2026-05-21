@@ -457,7 +457,23 @@ def render(result: dict, output_dir: str | None = None) -> str:
     _os.makedirs(output_dir, exist_ok=True)
 
     safe_query = "".join(c if c.isalnum() or c in "._- " else "_" for c in query)[:40].strip().replace(" ", "_")
-    fname = f"{safe_query}_{ts}.html"
+
+    # Platform label
+    if mode.startswith("douyin."):
+        platform_label = "抖音"
+    elif mode.startswith("taobao."):
+        platform_label = "淘宝"
+    elif mode.startswith("tmall."):
+        platform_label = "天猫"
+    elif mode.startswith("jd."):
+        platform_label = "京东"
+    else:
+        platform_label = mode.split(".")[0] if "." in mode else mode
+
+    # Count
+    count = result.get("card_count") or result.get("target_count") or 0
+
+    fname = f"{safe_query}_{platform_label}_{count}条_{ts}.html"
     output_path = _os.path.join(output_dir, fname)
 
     if mode.startswith("douyin."):

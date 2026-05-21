@@ -1,0 +1,327 @@
+{
+  "default": {
+    "min_interval_sec": 6,
+    "jitter_sec": [1, 4],
+    "max_pages_per_run": 8,
+    "cooldown_on_block_sec": 1800,
+    "max_block_signals_before_hard_stop": 2,
+    "min_cross_domain_gap_sec": 5,
+    "global_hard_gate_sec": 5,
+    "required_checklist": [
+      "discovery_layer_complete",
+      "detail_layer_entered",
+      "not_stuck_in_list_or_search",
+      "usable_content_captured",
+      "sample_evidence_valid",
+      "quality_gate_passed"
+    ]
+  },
+  "google.com": {
+    "min_interval_sec": 30,
+    "jitter_sec": [5, 20],
+    "max_pages_per_run": 3,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1
+  },
+  "reddit.com": {
+    "min_interval_sec": 10,
+    "jitter_sec": [2, 8],
+    "max_pages_per_run": 6,
+    "cooldown_on_block_sec": 1800,
+    "max_block_signals_before_hard_stop": 1
+  },
+  "xiaohongshu.com": {
+    "min_interval_sec": 40,
+    "jitter_sec": [15, 30],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 7200,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"],
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "isolated_run_only": true,
+    "defer_in_profile": true,
+    "min_cross_domain_gap_sec": 10,
+    "run_budget_group": "xhs_isolated",
+    "required_checklist": [
+      "search_or_entry_opened",
+      "real_note_detail_opened",
+      "note_text_or_comment_captured"
+    ]
+  },
+  "douyin.com": {
+    "min_interval_sec": 28,
+    "jitter_sec": [10, 22],
+    "action_policies": {
+      "cards": {
+        "min_interval_sec": 5,
+        "jitter_sec": [1, 3],
+        "min_cross_domain_gap_sec": 3,
+        "required_checklist": [
+          "search_opened",
+          "card_count"
+        ]
+      }
+    },
+    "max_pages_per_run": 8,
+    "cooldown_on_block_sec": 7200,
+    "max_block_signals_before_hard_stop": 2,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"],
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "isolated_run_only": true,
+    "defer_in_profile": true,
+    "min_cross_domain_gap_sec": 10,
+    "run_budget_group": "douyin_isolated",
+    "required_checklist": [
+      "search_opened",
+      "real_video_modal_opened",
+      "focus_returned_to_page",
+      "x_pressed_to_open_comments",
+      "comments_captured"
+      ]
+    },
+  "taobao.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "action_policies": {
+      "cards": {
+        "min_interval_sec": 5,
+        "jitter_sec": [1, 3],
+        "min_cross_domain_gap_sec": 3,
+        "required_checklist": [
+          "search_opened",
+          "card_count"
+        ]
+      }
+    },
+    "max_pages_per_run": 10,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "isolated_run_only": true,
+    "defer_in_profile": true,
+    "min_cross_domain_gap_sec": 8,
+    "run_budget_group": "taobao_isolated",
+    "required_checklist": [
+      "search_opened",
+      "product_cards_captured"
+    ]
+  },
+  "tmall.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "action_policies": {
+      "cards": {
+        "min_interval_sec": 5,
+        "jitter_sec": [1, 3],
+        "min_cross_domain_gap_sec": 3,
+        "required_checklist": [
+          "search_opened",
+          "card_count"
+        ]
+      }
+    },
+    "max_pages_per_run": 1,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "isolated_run_only": true,
+    "defer_in_profile": true,
+    "min_cross_domain_gap_sec": 8,
+    "run_budget_group": "tmall_isolated",
+    "required_checklist": [
+      "search_opened",
+      "product_cards_captured"
+    ]
+  },
+  "jd.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "action_policies": {
+      "cards": {
+        "min_interval_sec": 5,
+        "jitter_sec": [1, 3],
+        "min_cross_domain_gap_sec": 3,
+        "required_checklist": [
+          "search_opened",
+          "card_count"
+        ]
+      }
+    },
+    "max_pages_per_run": 10,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "isolated_run_only": true,
+    "defer_in_profile": true,
+    "min_cross_domain_gap_sec": 8,
+    "run_budget_group": "jd_isolated",
+    "required_checklist": [
+      "search_opened",
+      "product_cards_captured"
+    ]
+  },
+    "bilibili.com": {
+    "min_interval_sec": 10,
+    "jitter_sec": [2, 6],
+    "max_pages_per_run": 8,
+    "cooldown_on_block_sec": 2400,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "comment_fetch_mode": "playwright_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"],
+    "min_cross_domain_gap_sec": 5,
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "required_checklist": [
+      "search_opened",
+      "real_video_opened",
+      "ad_or_overlay_handled",
+      "real_bvid_confirmed",
+      "cookie_checked",
+      "comment_json_or_visible_comment_captured"
+    ]
+  },
+  "taptap.cn": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"],
+    "min_cross_domain_gap_sec": 5,
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "required_checklist": [
+      "search_opened",
+      "official_game_detail_opened",
+      "review_tab_opened",
+      "review_content_captured"
+    ]
+  },
+  "taptap.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1
+  },
+  "tieba.baidu.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"],
+    "min_cross_domain_gap_sec": 5,
+    "global_hard_gate_sec": 5,
+    "global_high_risk_lock": true,
+    "min_detail_pages_per_run": 5,
+    "required_checklist": [
+      "real_bar_opened",
+      "at_least_5_threads_clicked",
+      "entered_real_thread_detail",
+      "not_low_value_thread",
+      "thread_text_captured"
+    ]
+  },
+  "nga.178.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_preferred",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"]
+  },
+  "bbs.nga.cn": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_preferred",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"]
+  },
+  "weibo.com": {
+    "min_interval_sec": 24,
+    "jitter_sec": [8, 18],
+    "max_pages_per_run": 2,
+    "cooldown_on_block_sec": 7200,
+    "max_block_signals_before_hard_stop": 1
+  },
+  "s.weibo.com": {
+    "min_interval_sec": 24,
+    "jitter_sec": [8, 18],
+    "max_pages_per_run": 2,
+    "cooldown_on_block_sec": 7200,
+    "max_block_signals_before_hard_stop": 1
+  },
+  "zhihu.com": {
+    "min_interval_sec": 12,
+    "jitter_sec": [3, 8],
+    "max_pages_per_run": 5,
+    "cooldown_on_block_sec": 3600,
+    "max_block_signals_before_hard_stop": 1,
+    "content_fetch_mode": "playwright_only",
+    "discovery_fetch_mode": "search_only",
+    "allowed_fetch_backends": ["playwright"],
+    "disallowed_fetch_backends": ["web_fetch", "http"],
+    "required_for_profiles": ["game_sentiment_cn"]
+  },
+  "baidu.com": {
+    "min_interval_sec": 8,
+    "jitter_sec": [2, 5],
+    "max_pages_per_run": 10,
+    "cooldown_on_block_sec": 1200,
+    "max_block_signals_before_hard_stop": 2
+  },
+  "searxng": {
+    "min_interval_sec": 3,
+    "jitter_sec": [1, 2],
+    "max_pages_per_run": 20,
+    "cooldown_on_block_sec": 300,
+    "max_block_signals_before_hard_stop": 3
+  }
+}

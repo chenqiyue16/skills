@@ -1,0 +1,25 @@
+{
+  "name": "search-fetch-web",
+  "version": "1.0.0",
+  "description": "Search Fetch skill — route layer + rule layer for web searching and content fetching with Playwright, covering Google, Reddit, Xiaohongshu, Douyin, Bilibili, X, Cloudflare-protected sites and more.",
+  "license": "UNLICENSED",
+  "author": "local",
+  "keywords": [
+    "skill",
+    "search-fetch",
+    "playwright",
+    "web-scraping",
+    "bilibili",
+    "douyin",
+    "xiaohongshu",
+    "tieba",
+    "taptap"
+  ],
+  "openclaw": {
+    "minVersion": "0.1.0",
+    "requires": {},
+    "optionalEnv": [
+      "SEARCH_FETCH_SKILL_DIR"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+# Runtime data — debug screenshots, reports, state files, caches
+.data/
+
+# Python bytecode
+__pycache__/
+*.pyc

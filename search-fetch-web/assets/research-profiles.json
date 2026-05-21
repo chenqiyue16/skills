@@ -1,0 +1,82 @@
+{
+  "game_sentiment_cn": {
+    "description": "Chinese game sentiment research with mandatory community coverage and Playwright-only content capture for B站、TapTap、贴吧、小红书、抖音.",
+    "required_platforms": [
+      "bilibili.com",
+      "taptap.cn",
+      "tieba.baidu.com",
+      "douyin.com"
+    ],
+    "optional_platforms": [
+      "xiaohongshu.com",
+      "zhihu.com",
+      "nga.178.com",
+      "bbs.nga.cn",
+      "weibo.com"
+    ],
+    "search_order": [
+      "searxng",
+      "baidu",
+      "playwright"
+    ],
+    "min_successful_required_platforms": 4,
+    "min_samples_per_required_platform": 1,
+    "min_content_text_length": {
+      "default": 120,
+      "bilibili.com": 300,
+      "taptap.cn": 500,
+      "tieba.baidu.com": 200,
+      "xiaohongshu.com": 180,
+      "douyin.com": 120
+    },
+    "forbidden_text_markers": {
+      "default": [
+        "加载中",
+        "下载客户端",
+        "推荐",
+        "首页"
+      ],
+      "xiaohongshu.com": [
+        "创作中心",
+        "业务合作",
+        "打开App",
+        "下载小红书App"
+      ],
+      "douyin.com": [
+        "加载中",
+        "客户端",
+        "精选",
+        "推荐",
+        "搜索",
+        "关注",
+        "朋友",
+        "我的"
+      ]
+    },
+    "required_text_markers": {
+      "taptap.cn": [
+        "评论",
+        "回复",
+        "评价",
+        "综合",
+        "最新"
+      ],
+      "tieba.baidu.com": [
+        "回复",
+        "吧",
+        "楼主",
+        "只看楼主"
+      ]
+    },
+    "content_backend_policy": {
+      "bilibili.com": "playwright",
+      "taptap.cn": "playwright",
+      "tieba.baidu.com": "playwright",
+      "xiaohongshu.com": "playwright",
+      "douyin.com": "playwright",
+      "zhihu.com": "playwright",
+      "nga.178.com": "playwright_preferred",
+      "bbs.nga.cn": "playwright_preferred"
+    }
+  }
+}

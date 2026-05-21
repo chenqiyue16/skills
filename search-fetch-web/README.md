@@ -1,6 +1,6 @@
-# Search Fetch Skill
+# search-fetch-web Skill
 
-`search-fetch` 是一个搜索与抓取路由技能包。
+`search-fetch-web` 是一个搜索与抓取路由技能包。
 
 核心定位：
 
@@ -34,7 +34,7 @@
 
 ## 安装
 
-1. 解压 zip 包到当前宿主应用的技能目录，保持目录名为 `search-fetch`
+1. 解压 zip 包到当前宿主应用的技能目录，保持目录名为 `search-fetch-web`
 2. 确保 Python 依赖已安装
 3. 重启当前宿主应用，让新 skill 被重新加载
 
